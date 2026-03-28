@@ -72,6 +72,7 @@ function initHeroParticles() {
   if (!container) return;
 
   const particleCount = 30;
+  const fragment = document.createDocumentFragment();
 
   for (let i = 0; i < particleCount; i++) {
     const particle = document.createElement('div');
@@ -86,8 +87,10 @@ function initHeroParticles() {
     particle.style.animationDelay = `${Math.random() * 4}s`;
     particle.style.opacity = Math.random() * 0.5 + 0.1;
 
-    container.appendChild(particle);
+    fragment.appendChild(particle);
   }
+
+  container.appendChild(fragment);
 }
 
 /* --- Gallery lightbox --- */
