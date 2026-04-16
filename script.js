@@ -192,6 +192,7 @@ function initParallax() {
 /* --- Contact form handler --- */
 function handleSubmit(e) {
   e.preventDefault();
+  const form = e.target;
   const btn = document.getElementById('submitBtn');
   const originalText = btn.textContent;
 
@@ -199,19 +200,44 @@ function handleSubmit(e) {
   btn.disabled = true;
   btn.style.opacity = '0.7';
 
-  setTimeout(() => {
-    btn.textContent = '✓ Wiadomość wysłana!';
-    btn.style.background = 'linear-gradient(135deg, #4ade80, #22c55e)';
-    btn.style.opacity = '1';
+  const formData = new FormData(form);
+  const object = Object.fromEntries(formData);
+  const json = JSON.stringify(object);
 
+  fetch('https://api.web3forms.com/submit', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      'Accept': 'application/json'
+    },
+    body: json
+  })
+  .then(async (response) => {
+    let json = await response.json();
+    if (response.status == 200) {
+      btn.textContent = '✓ Wiadomość wysłana!';
+      btn.style.background = 'linear-gradient(135deg, #4ade80, #22c55e)';
+      btn.style.opacity = '1';
+      form.reset();
+    } else {
+      console.log(response);
+      btn.textContent = 'Wystąpił błąd.';
+      btn.style.background = '#ef4444';
+    }
+  })
+  .catch(error => {
+    console.log(error);
+    btn.textContent = 'Wystąpił błąd.';
+    btn.style.background = '#ef4444';
+  })
+  .then(function() {
     setTimeout(() => {
       btn.textContent = originalText;
       btn.disabled = false;
       btn.style.background = '';
       btn.style.opacity = '';
-      e.target.reset();
-    }, 3000);
-  }, 1500);
+    }, 4000);
+  });
 }
 
 /* --- Active nav link on scroll --- */
