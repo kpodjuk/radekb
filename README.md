@@ -1,5 +1,11 @@
 # Studio Figura Warszawa Wola
 
-A static website for Studio Figura Warszawa Wola, providing information about weight loss and body shaping treatments.
+A responsive, static landing page built with vanilla HTML5, CSS3, and JavaScript.
+The project features a custom UI design, mobile-friendly navigation, and smooth scrolling for a modern user experience.
 
-🌍 **[View Live Site](https://kpodjuk.github.io/radekb/)**
+### 🚀 **[👉 SEE LIVE VERSION 👈](https://kpodjuk.github.io/radekb/)**
+
+## Tech Stack
+- **HTML5**: Semantic structure.
+- **CSS3**: Custom styling, flexbox/grid layouts, and responsive media queries.
+- **JavaScript (Vanilla)**: DOM manipulation, interactive mobile menu, and event handling.
