@@ -15,15 +15,23 @@ document.addEventListener('DOMContentLoaded', () => {
 /* --- Navbar scroll effect --- */
 function initNavbar() {
   const navbar = document.getElementById('navbar');
+  let ticking = false;
+
   const handleScroll = () => {
-    if (window.scrollY > 60) {
-      navbar.classList.add('scrolled');
-    } else {
-      navbar.classList.remove('scrolled');
+    if (!ticking) {
+      requestAnimationFrame(() => {
+        if (window.scrollY > 60) {
+          navbar.classList.add('scrolled');
+        } else {
+          navbar.classList.remove('scrolled');
+        }
+        ticking = false;
+      });
+      ticking = true;
     }
   };
   window.addEventListener('scroll', handleScroll, { passive: true });
-  handleScroll();
+  handleScroll(); // Initialize state
 }
 
 /* --- Mobile hamburger menu --- */
