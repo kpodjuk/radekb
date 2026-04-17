@@ -818,7 +818,6 @@ ul { list-style: none; }
   box-shadow: var(--shadow-md);
   transition: all var(--transition-base);
   cursor: pointer;
-  group: true;
 }
 
 .service-card:hover {

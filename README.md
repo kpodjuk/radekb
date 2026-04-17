@@ -11,6 +11,7 @@ The project features a custom UI design, mobile-friendly navigation, and smooth 
 - **CSS3**: Custom styling, flexbox/grid layouts, and responsive media queries.
 - **JavaScript (Vanilla)**: DOM manipulation, interactive mobile menu, and event handling.
 
+
 ## Contact Form Integration
 
 The contact form is powered by **[Web3Forms](https://web3forms.com/)**, allowing the website to remain fully static (no backend required) while delivering submitted forms directly to the administrator's email.
@@ -29,3 +30,4 @@ To enable the form, you must generate a free Access Key and update the HTML:
    <input type="hidden" name="access_key" value="YOUR_ACTUAL_ACCESS_KEY_HERE">
    ```
 6. Commit and push the changes. The form is now active and submissions will be sent to your email. You can also view submissions in the Web3Forms dashboard.
+
