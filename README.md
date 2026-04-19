@@ -1,4 +1,4 @@
-# Studio Figura Warszawa Wola
+# Studio Figura Ostrzeszów Rynek
 
 A responsive, static landing page built with vanilla HTML5, CSS3, and JavaScript.
 The project features a custom UI design, mobile-friendly navigation, and smooth scrolling for a modern user experience.
